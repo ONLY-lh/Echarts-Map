@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="map.css">
+</head>
+<body>
+	<div class="info">
+		<div id="deliver">选择发货地</div>
+		<div id="receive">选择收货地</div>
+	</div>
+
+	<!-- <div id="lh_bg"></div> 
+	<div id="lh_main"> 
+		<div id="lh_header">
+			<h2 class="lh-tit">哈哈哈哈</h2> 
+			<div class="lh-ipt"> 
+				<input type="text" placeholder="请输入您要搜索的城市" class="lh-ipt-city" >
+				<ul class="lh-ipt-related">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ul>
+				<input type="button" value="搜索" class="lh-btn-search" >
+				<input type="button" value="全国" class="lh-btn-nation" >
+			</div>
+		</div>
+		<div id="lh_content">
+			<div id="lh_regionsList">
+				<dl>
+					<dt>玉林市</dt>
+					<dd>
+						<a href="javascript:;">兴业县</a>
+						<a href="javascript:;">博白县</a>
+						<a href="javascript:;">容县</a>
+						<a href="javascript:;">北流县</a>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<span id="lh_close"></span>
+	</div> -->
+
+
+	
+	
+	<script type="text/javascript" src="src/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="src/echarts.js"></script>
+	<script type="text/javascript" src="src/chinaData.js"></script>
+	<script type="text/javascript" src="map.js"></script>
+	<script type="text/javascript">
+		
+
+		/*$('.info').on('click','div',function(){
+			var id = $(this)[0].id;
+			$(this).EMChoose({
+				inputBox: '#'+id,
+				showRegionsList: false,
+				callback: function(data){
+					$('#'+id).html(data.cityType)
+				}
+			})
+		})*/
+
+		$('#deliver').on('click',function(){
+			var _this = $(this);
+			var id = _this[0].id;
+			_this.EMChoose({
+				inputBox: '#'+id,
+				showRegionsList: true,
+				callback: function(data){
+					_this.html(data.name)
+				}
+			})
+		})
+
+		$('#receive').on('click',function(){
+			var _this = $(this);
+			var id = _this[0].id;
+			_this.EMChoose({
+				inputBox: '#'+id,
+				showRegionsList: false,
+				callback: function(data){
+					_this.html(data.name)
+				}
+			})
+		})
+
+		
+
+
+	
+	</script>
+</body>
+</html>
